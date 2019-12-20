@@ -1,0 +1,109 @@
+{
+    "name": "@liquidbox/format-date",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [
+        "browser",
+        "commonjs",
+        "date",
+        "dateformat",
+        "date-format",
+        "date-format",
+        "datetime",
+        "ecmascript",
+        "es",
+        "es5",
+        "es6",
+        "esnext",
+        "format",
+        "format-date",
+        "formatdate",
+        "format",
+        "function",
+        "gmt",
+        "i18n",
+        "import",
+        "internationalization",
+        "javascipt",
+        "js",
+        "l10n",
+        "locale",
+        "localization",
+        "node",
+        "nodejs",
+        "object",
+        "polyfill",
+        "require",
+        "shim",
+        "time",
+        "timestamp",
+        "ts",
+        "typescript",
+        "utc"
+    ],
+    "homepage": "https://github.com/liquidbox/es-formatedate#readme",
+    "bugs": {
+        "url": "https://github.com/liquidbox/es-formatedate/issues"
+    },
+    "license": "MIT",
+    "author": "Jonathan-Paul Marois <jonathanpaul.marois@gmail.com>",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "bin": {
+        "eslint": "node_modules/eslint-cli/bin/eslint.js",
+        "prettier": "node_modules/prettier/bin-prettier.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/liquidbox/es-formatedate.git"
+    },
+    "scripts": {
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npm run lint && npm run format && tsc",
+        "format": "prettier --parser json --write \"*.json\" && prettier --parser typescript --write \"src/*.ts\"",
+        "lint": "eslint --fix \"src/*.ts\""
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/node": "^12.12.21",
+        "@types/requirejs": "^2.1.31",
+        "@typescript-eslint/eslint-plugin": "^2.8.0",
+        "@typescript-eslint/parser": "^2.8.0",
+        "eslint": "^6.6.0",
+        "eslint-cli": "^1.1.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "prettier": "^1.19.1",
+        "typescript": "^3.7.2"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "commonjs": true,
+            "es6": true
+        },
+        "extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended"],
+        "globals": {
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly"
+        },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+            "ecmaVersion": 2018
+        },
+        "plugins": ["@typescript-eslint"],
+        "rules": {}
+    },
+    "prettier": {
+        "printWidth": 120,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "endOfLine": "lf"
+    }
+}
